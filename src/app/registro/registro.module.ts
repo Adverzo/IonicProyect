@@ -11,6 +11,7 @@ import { RegistroPage } from './registro.page';
     CommonModule,
     FormsModule,
     IonicModule,
+    RegistroPage,
     RouterModule.forChild([
       {
         path: '',
@@ -18,7 +19,6 @@ import { RegistroPage } from './registro.page';
       }
     ])
   ],
-  declarations: [RegistroPage],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class RegistroPageModule {}

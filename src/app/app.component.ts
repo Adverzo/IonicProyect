@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { Platform } from '@ionic/angular';
 
 @Component({
@@ -9,8 +9,9 @@ import { Platform } from '@ionic/angular';
 })
 export class AppComponent {
   loaded = false;
+  private platform = inject(Platform);
 
-  constructor(private platform: Platform) {
+  constructor() {
     this.initializeApp();
   }
 
