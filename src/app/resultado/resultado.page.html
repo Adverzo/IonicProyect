@@ -1,0 +1,50 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Tu Huella Ecológica</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding resultado-bg">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Resultado</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-grid class="ion-text-center">
+    <ion-row>
+      <ion-col size="12" size-md="8" offset-md="2">
+        <ion-card *ngIf="score !== null" [ngClass]="{'baja': score<20,'media': score>=20 && score<40,'alta': score>=40}">
+          <ion-card-header>
+            <ion-card-title>
+              <ion-icon [name]="score<20 ? 'happy-outline' : score<40 ? 'thumbs-up-outline' : 'sad-outline'"></ion-icon>
+              Resultado: {{ getLevel() }}
+            </ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <p>Tu puntaje de huella ecológica es: <strong>{{ score }}</strong></p>
+            <p>{{ getDescription() }}</p>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-card>
+          <ion-card-header>
+            <ion-card-title>Consejos para Mejorar</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            <ul>
+              <li *ngFor="let consejo of consejos">{{ consejo }}</li>
+            </ul>
+          </ion-card-content>
+        </ion-card>
+
+        <ion-button expand="full" routerLink="/principal" color="primary" class="ion-margin-top">
+          <ion-icon slot="start" name="home-outline"></ion-icon>
+          Volver al Inicio
+        </ion-button>
+        <p class="nature-quote">"Recuerda: no heredamos la tierra de nuestros padres, la tomamos prestada de nuestros hijos."</p>
+        <p class="footer-note">Gracias por participar en el cambio. Comparte tu resultado con amigos.</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

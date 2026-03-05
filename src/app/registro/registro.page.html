@@ -1,0 +1,75 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Datos Personales</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding registro-bg">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Datos Personales</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-content>
+      <form (ngSubmit)="onSubmit()">
+        <ion-list lines="inset">
+          <ion-item>
+            <ion-icon slot="start" name="car-outline"></ion-icon>
+            <ion-label>Medio de Transporte Principal</ion-label>
+            <ion-select [(ngModel)]="data.transporte" name="transporte" placeholder="Selecciona">
+              <ion-select-option value="auto">Auto</ion-select-option>
+              <ion-select-option value="bus">Autobus</ion-select-option>
+              <ion-select-option value="bici">Bicicleta</ion-select-option>
+              <ion-select-option value="caminar">Caminar</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon slot="start" name="repeat-outline"></ion-icon>
+            <ion-label position="floating">Veces al día que usas transporte</ion-label>
+            <ion-input type="number" [(ngModel)]="data.vecesTransporte" name="vecesTransporte"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon slot="start" name="restaurant-outline"></ion-icon>
+            <ion-label>Tipo de Alimentación</ion-label>
+            <ion-select [(ngModel)]="data.alimentacion" name="alimentacion" placeholder="Selecciona">
+              <ion-select-option value="carnivoro">Carnívoro</ion-select-option>
+              <ion-select-option value="vegetariano">Vegetariano</ion-select-option>
+              <ion-select-option value="vegano">Vegano</ion-select-option>
+            </ion-select>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon slot="start" name="fish-outline"></ion-icon>
+            <ion-label position="floating">Veces comes carne por semana</ion-label>
+            <ion-input type="number" [(ngModel)]="data.carneSemana" name="carneSemana"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon slot="start" name="water-outline"></ion-icon>
+            <ion-label position="floating">Veces te bañas al día</ion-label>
+            <ion-input type="number" [(ngModel)]="data.banosDia" name="banosDia"></ion-input>
+          </ion-item>
+
+          <ion-item>
+            <ion-icon slot="start" name="snow-outline"></ion-icon>
+            <ion-label>¿Usas aire acondicionado?</ion-label>
+            <ion-select [(ngModel)]="data.aireAcondicionado" name="aireAcondicionado" placeholder="Selecciona">
+              <ion-select-option value="si">Sí</ion-select-option>
+              <ion-select-option value="no">No</ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+
+        <ion-button expand="full" type="submit" color="primary" class="ion-margin-top" [disabled]="!data.transporte || !data.alimentacion">
+          <ion-icon slot="start" name="save-outline"></ion-icon>
+          Enviar Datos
+        </ion-button>
+      </form>
+      <p class="footer-note">Tus respuestas nos ayudan a evaluar tu impacto y guiarte hacia hábitos más sostenibles.</p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

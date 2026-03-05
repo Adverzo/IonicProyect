@@ -1,0 +1,22 @@
+// For information on how to create your own theme, please refer to:
+// https://ionicframework.com/docs/theming/
+
+/* custom nature palette */
+:root {
+  --ion-color-primary: #2e7d32; /* dark green */
+  --ion-color-primary-rgb: 46,125,50;
+  --ion-color-primary-contrast: #ffffff;
+
+  --ion-color-secondary: #81c784; /* light green */
+  --ion-color-secondary-rgb: 129,199,132;
+  --ion-color-secondary-contrast: #000000;
+
+  --ion-color-success: #4caf50;
+  --ion-color-warning: #ffb300;
+  --ion-color-danger: #d32f2f;
+
+  /* earth tones */
+  --ion-color-tertiary: #a1887f;
+  --ion-color-light: #f1f8e9;
+  --ion-color-dark: #3e2723;
+}

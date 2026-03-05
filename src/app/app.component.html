@@ -1,0 +1,11 @@
+<ion-app>
+  <div class="splash" *ngIf="!loaded">
+    <div class="splash-content">
+      <ion-icon name="leaf-outline"></ion-icon>
+      <h1>Huella Ecológica</h1>
+      <p>Cuidando el planeta...</p>
+    </div>
+  </div>
+
+  <ion-router-outlet (ionViewDidEnter)="loaded=true"></ion-router-outlet>
+</ion-app>

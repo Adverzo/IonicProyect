@@ -1,0 +1,40 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding login-bg">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Login</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-content>
+      <form (ngSubmit)="onLogin()">
+        <ion-item>
+          <ion-icon slot="start" name="mail-outline"></ion-icon>
+          <ion-label position="floating">Email</ion-label>
+          <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+          <ion-label position="floating">Password</ion-label>
+          <ion-input type="password" [(ngModel)]="password" name="password" required></ion-input>
+        </ion-item>
+
+        <ion-button expand="full" type="submit" color="primary" class="ion-margin-top" [disabled]="!email || !password">
+          <ion-icon slot="start" name="log-in-outline"></ion-icon>
+          Logearte
+        </ion-button>
+      </form>
+      <div class="ion-text-center ion-margin-top">
+        <p>¿No tienes cuenta? <a routerLink="/registro">Regístrate</a></p>
+      </div>
+    </ion-card-content>
+  </ion-card>
+  <p class="footer-note">Iniciando sesión en un entorno más verde.</p>
+</ion-content>

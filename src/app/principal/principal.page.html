@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Huella Ecológica</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding background-nature">
+
+  <ion-grid>
+    <ion-row class="ion-justify-content-center ion-align-items-center">
+      <ion-col size="12" size-md="6" class="ion-text-center">
+        <ion-card class="welcome-card">
+          <!-- icono ecológico -->
+          <ion-icon name="leaf-outline" size="large" class="welcome-icon"></ion-icon>
+          <ion-card-header>
+            <ion-card-title>Bienvenido a la App de Huella Ecológica</ion-card-title>
+          </ion-card-header>
+          <ion-card-content>
+            Calcula tu impacto ambiental según tus hábitos diarios y descubre cómo reducir tu huella ecológica.
+          </ion-card-content>
+        </ion-card>
+
+        <ion-button expand="full" routerLink="/login" color="primary" class="ion-margin-top">
+          <ion-icon slot="start" name="log-in-outline"></ion-icon>
+          Login
+        </ion-button>
+
+        <ion-button expand="full" routerLink="/registro" color="secondary" class="ion-margin-top">
+          <ion-icon slot="start" name="create-outline"></ion-icon>
+          Registrarse
+        </ion-button>
+        <p class="nature-quote">"El mejor momento para plantar un árbol fue hace 20 años. El segundo mejor momento es ahora."</p>
+        <p class="footer-note">Visita, aprende y actúa: cada pequeño cambio cuenta.</p>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>
