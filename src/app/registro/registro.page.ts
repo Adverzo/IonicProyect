@@ -4,6 +4,7 @@ import { IonicModule } from '@ionic/angular';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ToastController } from '@ionic/angular';
 
 interface EcoData {
   transporte: string;
@@ -32,10 +33,21 @@ export class RegistroPage {
   };
 
   private router = inject(Router);
+  private toastController = inject(ToastController);
 
   constructor() {}
 
-  onSubmit() {
+  async onSubmit() {
+    if (!this.data.transporte || !this.data.alimentacion) {
+      const toast = await this.toastController.create({
+        message: 'Por favor, selecciona transporte y alimentación.',
+        duration: 2000,
+        color: 'warning',
+        position: 'top'
+      });
+      toast.present();
+      return;
+    }
     let score = 0;
     if (this.data.transporte === 'auto') score += 20;
     else if (this.data.transporte === 'bus') score += 10;
@@ -47,6 +59,16 @@ export class RegistroPage {
     score += this.data.carneSemana * 1.5;
     score += this.data.banosDia * 3;
     if (this.data.aireAcondicionado === 'si') score += 10;
-    this.router.navigate(['/resultado'], { state: { score, data: this.data } });
+
+    const toast = await this.toastController.create({
+      message: 'Datos enviados. Calculando resultado...',
+      duration: 1500,
+      color: 'success',
+      position: 'top'
+    });
+    toast.present();
+    setTimeout(() => {
+      this.router.navigate(['/resultado'], { state: { score, data: this.data } });
+    }, 1500);
   }
 }

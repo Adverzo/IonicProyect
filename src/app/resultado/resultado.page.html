@@ -14,7 +14,7 @@
   <ion-grid class="ion-text-center">
     <ion-row>
       <ion-col size="12" size-md="8" offset-md="2">
-        <ion-card *ngIf="score !== null" [ngClass]="{'baja': score<20,'media': score>=20 && score<40,'alta': score>=40}">
+        <ion-card *ngIf="score !== null" [ngClass]="{'baja': score<20,'media': score>=20 && score<40,'alta': score>=40}" class="fade-in">
           <ion-card-header>
             <ion-card-title>
               <ion-icon [name]="score<20 ? 'happy-outline' : score<40 ? 'thumbs-up-outline' : 'sad-outline'"></ion-icon>
@@ -22,12 +22,13 @@
             </ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            <p>Tu puntaje de huella ecológica es: <strong>{{ score }}</strong></p>
+            <p>Tu puntaje de huella ecológica es: <strong class="score-counter">{{ score }}</strong></p>
             <p>{{ getDescription() }}</p>
+            <canvas #chartCanvas width="300" height="200"></canvas>
           </ion-card-content>
         </ion-card>
 
-        <ion-card>
+        <ion-card class="fade-in">
           <ion-card-header>
             <ion-card-title>Consejos para Mejorar</ion-card-title>
           </ion-card-header>
@@ -38,7 +39,7 @@
           </ion-card-content>
         </ion-card>
 
-        <ion-button expand="full" routerLink="/principal" color="primary" class="ion-margin-top">
+        <ion-button expand="full" routerLink="/principal" color="primary" class="ion-margin-top bounce">
           <ion-icon slot="start" name="home-outline"></ion-icon>
           Volver al Inicio
         </ion-button>
@@ -48,3 +49,18 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="auto">
+        <ion-icon name="leaf-outline" size="large"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          <h4>PelusasCompany</h4>
+          <p>Contacto: 449 666 989</p>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

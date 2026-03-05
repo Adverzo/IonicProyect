@@ -9,7 +9,7 @@
   <ion-grid>
     <ion-row class="ion-justify-content-center ion-align-items-center">
       <ion-col size="12" size-md="6" class="ion-text-center">
-        <ion-card class="welcome-card">
+        <ion-card class="welcome-card fade-in">
           <!-- icono ecológico -->
           <ion-icon name="leaf-outline" size="large" class="welcome-icon"></ion-icon>
           <ion-card-header>
@@ -20,12 +20,12 @@
           </ion-card-content>
         </ion-card>
 
-        <ion-button expand="full" routerLink="/login" color="primary" class="ion-margin-top">
+        <ion-button expand="full" routerLink="/login" color="primary" class="ion-margin-top bounce">
           <ion-icon slot="start" name="log-in-outline"></ion-icon>
           Login
         </ion-button>
 
-        <ion-button expand="full" routerLink="/registro" color="secondary" class="ion-margin-top">
+        <ion-button expand="full" routerLink="/registro" color="secondary" class="ion-margin-top bounce">
           <ion-icon slot="start" name="create-outline"></ion-icon>
           Registrarse
         </ion-button>
@@ -36,3 +36,18 @@
   </ion-grid>
 
 </ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="auto">
+        <ion-icon name="leaf-outline" size="large"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          <h4>PelusasCompany</h4>
+          <p>Contacto: 449 666 989</p>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

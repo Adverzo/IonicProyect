@@ -11,7 +11,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card>
+  <ion-card class="fade-in">
     <ion-card-content>
       <form (ngSubmit)="onSubmit()">
         <ion-list lines="inset">
@@ -64,7 +64,7 @@
           </ion-item>
         </ion-list>
 
-        <ion-button expand="full" type="submit" color="primary" class="ion-margin-top" [disabled]="!data.transporte || !data.alimentacion">
+        <ion-button expand="full" type="submit" color="primary" class="ion-margin-top bounce" [disabled]="!data.transporte || !data.alimentacion">
           <ion-icon slot="start" name="save-outline"></ion-icon>
           Enviar Datos
         </ion-button>
@@ -73,3 +73,18 @@
     </ion-card-content>
   </ion-card>
 </ion-content>
+<ion-footer>
+  <ion-toolbar color="primary">
+    <ion-row class="ion-align-items-center ion-justify-content-center">
+      <ion-col size="auto">
+        <ion-icon name="leaf-outline" size="large"></ion-icon>
+      </ion-col>
+      <ion-col>
+        <ion-text>
+          <h4>PelusasCompany</h4>
+          <p>Contacto: 449 666 989</p>
+        </ion-text>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-footer>

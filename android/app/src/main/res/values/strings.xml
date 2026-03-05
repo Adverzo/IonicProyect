@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Huella Ecologica</string>
+    <string name="title_activity_main">Huella Ecologica</string>
+    <string name="package_name">com.adverzo.huellaecologica</string>
+    <string name="custom_url_scheme">com.adverzo.huellaecologica</string>
+</resources>
